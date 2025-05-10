@@ -194,6 +194,10 @@ python analyze_data.py
 
 - GSM8K-style QA pairs for LLM fine-tuning.
 
+### finetuning the LLM with GRPO 
+
+- after running `analyze_data.py` you will get the `qa_outputs/gsm8k_formatted_qa_pairs.json`
+- take that resulted json file and running finetuning notebook(`finetuning_llm.ipynb`) mentioned in the repo 
 ---
 
 ## Configuration
