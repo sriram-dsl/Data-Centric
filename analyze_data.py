@@ -1,8 +1,12 @@
 from src.data_preprocessing import load_and_preprocess_data
 from src.document_creation import create_table_rag_documents_multidim
 from src.verification import verify_documents, check_query_capabilities, save_sample_documents
-from src.vector_store import create_vector_store  # Add this import
-from config.settings import CSV_PATH, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH  # Update import
+from src.vector_store import create_vector_store
+from src.qa.pipeline import EcommerceQAPairGenerator
+from config.settings import (
+    CSV_PATH, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH,
+    QA_LLM_MODEL, QA_OUTPUT_DIR, QA_TOTAL_QUESTIONS, QA_CATEGORIES
+)
 
 def main():
     # Load and preprocess data
@@ -12,7 +16,7 @@ def main():
     documents = create_table_rag_documents_multidim(processed_df)
 
     # Create vector store
-    create_vector_store(documents, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH)  # Add this line
+    create_vector_store(documents, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH)
 
     # Verify documents
     verify_documents(documents)
@@ -73,7 +77,18 @@ def main():
 
     # Save sample documents
     save_sample_documents(documents)
-    print("\nDocument verification complete!")
+
+    # Run QA pair generation pipeline
+    print("\nStarting QA pair generation pipeline...")
+    qa_pipeline = EcommerceQAPairGenerator(
+        vector_store_path=VECTOR_STORE_SAVE_PATH,
+        llm_model=QA_LLM_MODEL,
+        output_dir=QA_OUTPUT_DIR,
+        num_questions_per_category=QA_NUM_QUESTIONS_PER_CATEGORY
+    )
+    qa_pipeline.run_pipeline(categories=QA_CATEGORIES, num_questions_total=QA_TOTAL_QUESTIONS)
+
+    print("\nFull pipeline execution complete!")
 
 if __name__ == "__main__":
     main()
