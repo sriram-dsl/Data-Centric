@@ -1,0 +1,6 @@
+{
+  "original_question": "",
+  "original_answer": "I'd be happy to help you solve the problem. However, I don't see a question provided in the instructions. Could you please provide the actual problem you would like me to solve? Once I have the question, I'll follow the GSM8K-style solution guidelines to provide a step-by-step answer.\n\nIf you need help coming up with a question based on the e-commerce data, feel free to ask and I can assist you in crafting a problem.",
+  "formatted_question": "** an online clothing store received 180 orders from customers who used their loyalty program. if this represents 30% of all orders, how many total orders did they receive? ",
+  "formatted_answer": "**\nfirst, i'll calculate the total number of orders.\ntotal orders = 180 / 0.3 = <<180/0.3=600>>600\n\n#### 600"
+}

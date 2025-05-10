@@ -1,0 +1,146 @@
+[
+  {
+    "question": "** an online clothing store received 180 orders from customers who used their loyalty program. if this represents 30% of all orders, how many total orders did they receive? ",
+    "answer": "**\nfirst, i'll calculate the total number of orders.\ntotal orders = 180 / 0.3 = <<180/0.3=600>>600\n\n#### 600"
+  },
+  {
+    "question": "** an online store sells 2500 smartphones in march, and then it sells 15% more in april. how many smartphones did the store sell altogether in these two months? ",
+    "answer": "**\n\nstep 1: understand the context\nwe're dealing with e-commerce data for smartphone sales from an online store.\n\nstep 2: identify the goal\nsince no specific question is provided, our goal will be to extract insights or answer hypothetical questions based on this dataset.\n\ntotal smartphones sold = 2500 + (2500 * 15/100) = <<2500+(2500*15/100)>>\n= 2850\n\n#### 2850"
+  },
+  {
+    "question": "** an online retailer sold a total of 240 products in april, and then another 180 products in may. what was the total number of products sold? ",
+    "answer": "**\ntotal products sold in april = 240\ntotal products sold in may = 180\ntotal products sold altogether = 240 + 180 = <<240+180=420>>420\n\n#### 420"
+  },
+  {
+    "question": "** An online pet store sells pet-related products. In total, 240 customers purchased pet-related products in one week. Among these customers, 50% were female, and among the females, 40% used social media to make their purchase. How many male customers purchased pet-related products?\n\n**",
+    "answer": "**\n\nAnalyze demographic characteristics of customers who purchased pet-related products:\n\nPet-related customers = 240\n\nFemale pet-related customers = 0.5 \u00d7 240 = <<0.5*240=120>>120\n\nMale pet-related customers = 240 - 120 = <<240-120=120>>120\n\n#### 120"
+  },
+  {
+    "question": "** an online retailer's best-selling product, a wireless charging pad, has been selling at an average rate of 120 units per week. if this represents 80% of total sales for the product during a specific quarter, how many wireless charging pads were sold in total during that quarter? ",
+    "answer": "**\n\nfirst, i'll calculate the total number of wireless charging pads sold.\ntotal wireless charging pads = 120 / 0.8 = <<120/0.8=150>>150 units per week\n\nnext, i'll find out how many weeks are in a quarter (assuming a standard 13-week quarter).\nweeks in a quarter = 13\n\nnow, i'll multiply the total weekly sales by the number of weeks to get the total quarterly sales.\ntotal wireless charging pads sold in a quarter = 150 x 13 = <<150*13=1950>>1950 units\n\n#### 1950"
+  },
+  {
+    "question": "** the online store segment with true discount usage has an average customer satisfaction rating of 5.4 out of 10. if this segment accounts for 52.1% of all customers, what is the overall average customer satisfaction rating across all segments? ",
+    "answer": "**\n\nfirst, i'll calculate the total number of customers.\ntotal customers = total customers in this segment / segment percentage = 521 / 0.521 = <<521/0.521=1002>>1002\n\nnext, i'll find the overall average customer satisfaction rating.\naverage customer satisfaction rating for all segments = (number of customers in this segment * average customer satisfaction rating for this segment) / total number of customers = (521 * 5.4/10) / 1002 = <<(521*5.4/10)/1002=14.0166/1002\u22480.014>>0.014\n\n#### 5.79"
+  },
+  {
+    "question": " true discount usage customers purchase smartphones at a rate of 30.9%. the average purchase amount for these customers is $273.99. what is the total revenue generated from purchases made using smartphones among true discount usage customers? ",
+    "answer": "step 1: identify the relevant information\nthe problem asks for the total revenue generated from purchases made using smartphones among true discount usage customers. the relevant information is that the smartphone device usage rate is 30.9% for true discount usage customers, and the average purchase amount for this segment is $273.99.\n\nstep 2: calculate the number of smartphone users\ntotal customers = 521 <<calculation=not needed>>\nsmartphone users = total customers * smartphone device usage rate = 521 * 0.309 = <<521*0.309=161.49>>161.49 \u2248 161\n\nstep 3: calculate the total revenue generated from purchases made using smartphones\ntotal revenue = number of smartphone users * average purchase amount = 161 * $273.99 = <<161*273.99=44,259.39>>44,259.39\n\n#### 44,259.39"
+  },
+  {
+    "question": "** the loyalty program membership rate is 46.6% among customers who did not use true discounts. if these customers have an average satisfaction rating of 5.4 out of 10, what is the overall average customer satisfaction rating across all segments that are not true discount usage customers? ",
+    "answer": "**\nthe loyalty program membership rate is 46.6% among customers who did not use true discounts.\n\nfirst, i'll calculate the total number of customers not using true discounts.\ntotal customers = ? (given)\ncustomers using true discounts = ? (not given)\n\nlet's assume there are x customers in total.\nthen, customers not using true discounts = x - customers using true discounts\n\nnow, i can find the number of customers not using true discounts.\nnumber of customers not using true discounts = 1092 - 521 = <<1092-521=571>>571 (calculated)\n\nnext, i'll calculate the weighted average customer satisfaction rating for these non-true discount usage customers.\n\nweighted average customer satisfaction = average satisfaction rating * number of customers = 5.4 * 571 = <<5.4*571=3091.4>>3091.4\n\nfinally, i'll find the overall average customer satisfaction rating.\noverall average customer satisfaction = weighted average / total non-true discount usage customers = 3091.4 / 571 \u2248 <<3091.4/571\u22484.53>>4.53\n\n#### 4.53"
+  },
+  {
+    "question": "** the male + discount usage: true segment has a total purchase amount of $61,933.88. if 32.4% of customers in this segment use desktops, what is the total revenue generated from purchases made using desktops among male gender customers with true discount usage? ",
+    "answer": "**\n\nstep 1: identify the relevant information\n\ntotal purchase amount = $61933.88\npercentage of desktop users = 32.4%\n\n<<61933.88 * 0.324 = 20115.31>>\n\nstep 2: calculate the number of customers using desktops\n\nnumber of desktop users = total purchase amount / average purchase amount (not provided)\nnumber of desktop users \u2248 225.25 (round down to 225)\n\n<<61933.88 / 274.04 \u2248 225.25>>\n\nstep 3: calculate the total revenue generated from desktop purchases among male gender customers with true discount usage\n\ntotal revenue = number of desktop users x average purchase amount\n= 36 x $274.04\n= 9874.44\n\n<<36 * 274.04 = 9874.44>>\n\n#### 9874.44"
+  },
+  {
+    "question": "The online segment of a company has an average purchase amount of $213.62 and a total purchase amount of $854.48. If this segment is comprised of 4 customers, what is the percentage increase in average customer satisfaction if the customers in this segment have an overall satisfaction score of 7.2/10?",
+    "answer": "Total = 5.5 - 10 = <<5.5-10=1.7>>1.7\n#### 1.7"
+  },
+  {
+    "question": "** The company's loyalty program has a membership rate of 46.8% among Female customers who shop online. If there are 154 Female customers who shop online, how many of them are part of the loyalty program?\n\n**",
+    "answer": "**\nFirst, I'll calculate the number of Female customers who are part of the loyalty program.\nFemale customers in the loyalty program = 154 \u00d7 0.468 = <<154*0.468=72.512>>72.51\n\n#### 72.51"
+  },
+  {
+    "question": "** among agender customers who shop in-store, the average purchase amount is $235.57 and the total purchase amount is $2120.17. if there are 9 such customers, what is the percentage discount rate used by these customers? ",
+    "answer": "**\n\nstep 1: understand the question\naverage purchase amount = $235.57\ntotal purchase amount = $2120.17\n\nstep 2: identify relevant information\nnumber of customers = 9\n\nstep 3: calculate total purchases\ntotal number of purchases = total purchase amount / average purchase amount\n= $2120.17 / $235.57\n= <<2120.17/235.57=9>>9 (since we are given that there are 9 such customers)\n\nstep 4: calculate discount rate\nlet full price be p, then:\ntotal purchase amount = p * total number of purchases\n$2120.17 = p * 9\n\np = $2120.17 / 9\n= <<2120.17/9=235.57>>235.57 (since we are given that this is the average purchase amount)\n\nstep 5: calculate percentage discount rate\ndiscount rate = (full price - actual price) / full price * 100\n= ($235.57 - $235.57) / $235.57 * 100\n= <<(235.57-235.57)/235.57*100=0>>0\n\n#### 0"
+  },
+  {
+    "question": "** The Online segment has an overall satisfaction score of 5.7/10. If this score is 32.5% higher than the average Agender customer satisfaction score, what was the original average satisfaction score for Agender customers who shop online?\n\n**",
+    "answer": "**\nLet's denote the average satisfaction score for Agender customers as x.\n\nx + (0.325*x) = 5.7 <<calculation=5.7>>\n\nCombine like terms on the left side of the equation:\n\n1.425*x = 5.7 <<calculation=1.425*x=5.7>>\n\nDivide both sides by 1.425 to isolate x:\n\nx = 5.7 / 1.425 <<calculation=5.7/1.425>>\n\nSo, the original average satisfaction score for Agender customers who shop online is approximately x = 4.0.\n\n#### 4.0"
+  },
+  {
+    "question": "** an e-commerce website has a total revenue of $1657.12 from its mixed purchase channel, which accounts for what percentage of its total revenue of $50000? ",
+    "answer": "**\nstep 1: calculate the total revenue\ntotal revenue = $50,000\n\nstep 2: find the revenue from the mixed channel\nrevenue from mixed channel = $1657.12\n\nstep 3: calculate the percentage of the website's total revenue that comes from the mixed channel\npercentage = (revenue from mixed channel / total revenue) * 100\n= ($1657.12 / $50,000) * 100\n= <<1657.12/50000*100=3.31>>3.31%\n\n#### 3.31%"
+  },
+  {
+    "question": "** What percentage of Baby Products customers also use discounts, based on a total of 41 customers in this segment?\n\n**",
+    "answer": "**\n\nStep 1: Identify relevant information\nDiscount usage rate among Baby Products customers = 0.537\n\nStep 2: Calculate the number of Baby Products customers who use discounts\nNumber of Baby Products customers who use discounts = 41 * 0.537 = <<41*0.537=22.07>>22.07 \u2248 22 customers\n\nStep 3: Check if the calculated value is close to the given value\nGiven: 22 customers in this segment with 100% discount usage rate (very close to our calculated value)\n\nStep 4: Calculate the percentage of Baby Products customers who use discounts\nPercentage = (Number of Baby Products customers who use discounts / Total number of Baby Products customers) * 100\n= (22.07 / 41) * 100 = <<(22.07/41)*100\u224853.7>> \u2248 53.7%\n\n#### 53.7"
+  },
+  {
+    "question": "if the average purchase amount for baby products is $256.01 and the total purchase amount is $5632.20, how many customers made purchases in this product category? ",
+    "answer": "average purchase amount = 256.01\ntotal purchase amount = 5632.20\n\nnumber of customers = total purchase amount \u00f7 average purchase amount\n= 5632.20 \u00f7 256.01\n= <<5632.20/256.01=22>>22\n\n#### 22"
+  },
+  {
+    "question": "** luxury goods customers who use discounts have an average customer satisfaction of 5.8/10. if most luxury goods customers (54.1%) are true discount usage customers, what is the average customer satisfaction for these customers? ",
+    "answer": "**\n\nstep 1: identify relevant data\nluxury goods customers with discounts make up 54.1% of all such customers.\n\nstep 2: calculate the total number of luxury goods customers who use discounts\ntotal luxury goods customers = x / 0.541 = <<x/0.541=368>>368 (assuming the overall average customer satisfaction is 5.8/10, and most luxury goods customers are true discount usage customers)\n\nstep 3: calculate the total customer satisfaction\ntotal customer satisfaction = 368 * 5.8/10 = <<368*5.8/10=214.56>>214.56 \u2248 215 customers\n\nstep 4: calculate the average customer satisfaction\naverage customer satisfaction = 215 / 368 = <<215/368=0.585>>0.585 \u2248 5.85\n\n#### 5.85"
+  },
+  {
+    "question": "if the total purchase amount for food & beverages is $6837.71 and there are no customers who use discounts, what is the average purchase amount for this product category? ",
+    "answer": "first, i'll calculate the number of customers.\nnumber of customers = ? / ? = <<?/?=23>>23 (assuming all customers in this segment do not use discounts)\n\nnext, i'll find the average purchase amount.\naverage purchase amount = $6837.71 / 23 = <<6837.71/23=297.29>>297.29\n\n#### 297.29"
+  },
+  {
+    "question": "what percentage of arts & crafts customers are members of the loyalty program, given that most customers in this segment (52.9%) do not use discounts and there is a total of 18 customers? ",
+    "answer": "arts & crafts customers = 18/0.529 = <<18/0.529=33.67>>33.67 \u2248 34 customers\nloyalty program members = 0.5 * arts & crafts customers = <<0.5*33.67=16.835>>16.84\n#### 26.45"
+  },
+  {
+    "question": "** a marketing campaign for a loyalty program resulted in an increase of 49.1% in sales from loyal customers, with an average order value of $261.27. if the total sales from all customers increased by 12.5% over the same period, what is the average order value for all customers during this period? ",
+    "answer": "**\n\nstep 1: let's calculate the total sales from loyal customers.\ntotal sales from loyal customers = average order value \u00d7 number of loyal customers\n= $261.27 \u00d7 1.491\n<<261.27*1.491=$390.45>>\n\nstep 2: calculate the number of all customers.\nnumber of all customers = total sales from all customers / average order value\n= (1.125x) / $294.42\n<<(1.125*x)/294.42>>\n\nstep 3: find the average order value for all customers.\naverage order value for all customers = total sales from loyal customers / number of loyal customers\n= $390.45 / 1.491\n<<390.45/1.491=$261.27>>\n\n#### 261.27"
+  },
+  {
+    "question": "The customer satisfaction rate for customers who made purchases through the online channel was 5.6/10 on average. If this channel accounted for 33.2% of total sales and the overall average customer satisfaction is 5.4/10, what is the average customer satisfaction for customers who purchased through other channels (Mixed and In-Store)?",
+    "answer": "Total = 18.76 + 0.332 = <<18.76+0.332=56.53>>56.53\nTotal = 56.53 + 666 = <<56.53+666=8.5>>8.5\n#### 8.5"
+  },
+  {
+    "question": "** A segment analysis reveals that customers with high income levels (4.1%) tend to spend more on products in the Sports & Outdoors category, with an average order value of $283.10. If this category accounts for 6.4% of total sales from customers with high income levels and the overall average order value is $267.77, what percentage of total sales comes from this category among all customers?\n\n**",
+    "answer": "**\n\nFirst, I'll calculate the total revenue from customers with high income levels.\nTotal revenue = 21 * $283.10 = <<21*283.10=5945.05>>5945.05\n\nNext, I'll find the percentage of total sales that comes from Sports & Outdoors among customers with high income levels.\nPercentage of total sales = ($5945.05 * 0.064) / $267.77 = <<5945.05*0.064/267.77=2.27>>\u2248 2.27%\n\nNow, I'll calculate the percentage of total sales that comes from Sports & Outdoors among all customers.\nPercentage of total sales = 2.1% * (1 / $267.77) = <<2.1%/267.77=0.008>>\u2248 0.8%\n\n#### 0.8"
+  },
+  {
+    "question": "The social media influence segment purchased $66108.02 worth of products online, in-store, and through mixed channels. If this amount represents 23.6% of total purchases, what is the total value of all customer transactions?",
+    "answer": "Total = 28035000 / 236 = <<28035000/236=119000>>119000\n#### 119000"
+  },
+  {
+    "question": "** In the marital status segment, 49.2% of customers are loyalty program members who spend an average of $276.54 per order. If there were a total of 242 customers in this segment, how much revenue does the store generate from loyalty program members' purchases?\n\n**",
+    "answer": "**\n\nStep 1: Calculate the number of loyalty program members\n\nNumber of loyalty program members = 0.492 * 242 = <<0.492*242=119.38>>119\n\nStep 2: Find the total purchase amount for this segment\n\nTotal customers in this segment = 242\nAverage purchase amount per customer = $276.54\nTotal purchase amount = Total customers * Average purchase amount = <<242*$276.54=$66921.63>>$66921.63\n\nStep 3: Calculate the number of orders using the total purchase amount and average purchase amount\n\nNumber of orders = Total purchase amount / Average purchase amount per order = <<66921.63/$276.54=243.15>>244 (round up to 244)\n\nStep 4: Calculate the revenue generated by these loyalty program members' purchases\n\nRevenue from loyalty program members = Average purchase amount per order * Number of orders = $276.54 * 244 = <<$276.54*244=$67445.36>>$67445.36\n\n#### $67445.36"
+  },
+  {
+    "question": "** the electronics category accounts for 7.2% of top product categories and has an average purchase amount of $280.12. if a customer purchased $257.43 worth of hotels online, which is 0.5% of total electronics sales, what percentage of this customer's purchase was dedicated to the electronics category? ",
+    "answer": "**\n\nfirst, i'll find the total electronics sales.\ntotal electronics sales = $280.12 / 0.072 = <<$280.12/0.072=$3888.33>>$3888.33\n\nnext, i'll find the hotels sales as a percentage of total electronics sales.\nhotels sales = $257.43 / x = <<$257.43/x=19.44>>19.44%\n\nnow, i'll find the amount spent on electronics.\nlet y be the amount spent on electronics.\n$257.43 = 0.005 \u00d7 x + y\nsubstituting x \u2248 $3888.33:\n$257.43 = 0.005 \u00d7 3888.33 + y\n$257.43 = 19.44 + y\n\nsimplifying:\ny \u2248 $237.99\n\nfinally, i'll find the percentage of this customer's purchase dedicated to electronics.\npercentage = (237.99 / 257.43) \u00d7 100% \u2248 <<(237.99/257.43)*100%=92.44>>92.44%\n\n#### 92.44"
+  },
+  {
+    "question": "** the device usage segment shows that 33.9% of customers use desktops, 33.5% use tablets, and 32.6% use smartphones. if a customer uses a tablet, what percentage of these customers also used a smartphone or a desktop during their shopping experience? ",
+    "answer": "**\n\nstep 1: define the probability space\ncustomers who use tablets = p(t) = 0.335\n\nstep 2: determine the probability of each event\np(s) = 0.326 (32.6% of all customers)\np(d) = 0.339 (33.9% of all customers)\n\nstep 3: find the probability of using a smartphone or desktop\np(t \u2229 s) = p(s) * p(t) = 0.316 * 0.335 = <<0.316*0.335=0.1055>>0.1055 \u2248 0.105\n\nstep 4: calculate the probability of using a tablet and desktop\np(t \u2229 d) = p(d) * p(t) = 0.339 * 0.335 = <<0.339*0.335=0.1137>>0.1137 \u2248 0.114\n\nstep 5: find the probability of using a smartphone or desktop given that they used a tablet\np(s \u222a d | t) = p(t \u2229 s) + p(t \u2229 d) = 0.1055 + 0.114 = <<0.1055+0.114=0.2195>>0.2195 \u2248 0.221\n\n#### 0.221"
+  },
+  {
+    "question": "A particular customer in the social media influence segment had a satisfaction rating of 7/10 after purchasing $330.27 worth of hotels through an in-store channel. If this customer's satisfaction rating was higher than the average satisfaction rating for customers who purchased hotels (5.2/10), what percentage increase in satisfaction did this customer experience compared to the average?",
+    "answer": "Average = 5.8 - 10 = <<5.8-10=0.2>>0.2\n#### 0.2"
+  },
+  {
+    "question": "** customers who used the mixed channel to make purchases contributed 37.3% of total sales, with an average purchase amount of $282.05. what is the average purchase amount for customers who made purchases using this mixed channel? ",
+    "answer": "**\n\nstep 1: calculate the percentage of total customers who used the mixed channel.\nmixed channel percentage = 0.373 (37.3%)\n#### [0.373]\n\nstep 2: calculate the total number of customers who used the mixed channel.\ntotal mixed channel customers = total average purchase amount / mixed channel percentage\n= $282.05 / 0.373\n= <<282.05/0.373=754.41>>754.41\n\nstep 3: calculate the average purchase amount for customers who used the mixed channel.\naverage purchase amount for mixed channel = total mixed channel customers x mixed channel percentage\n= 754.41 x 0.373\n= <<754.41*0.373=281.54>>281.54\n\n#### 281.54"
+  },
+  {
+    "question": "If a company offered a loyalty program membership to 49.2% of customers in the mobile accessories segment, and these members spent an average of $285.10 per order, how much more revenue would the company generate from loyalty members compared to non-members if each customer made exactly one order?",
+    "answer": "Total = 509 - 20 = <<509-20=489>>489\n#### 489"
+  },
+  {
+    "question": "** an e-commerce website generated $x from the mixed purchase channel, where x represents 34.1% of total revenue. what is the average purchase amount for customers who purchased using this channel? ",
+    "answer": "**\n\nstep 1: calculate the total revenue.\ntotal revenue = $x\n\nstep 2: find the fraction of total revenue that came from the mixed channel.\nfraction = 0.341\n\nstep 3: set up an equation to solve for x.\n$x / total revenue = fraction\n$x = total revenue * fraction\n= <<?*0.341=?>>?\n\nstep 4: plug in the given value for total revenue.\n$x = $95164.36 * 0.341\n\u2248 $32494.71\n\nstep 5: find the average purchase amount.\naverage purchase amount = $x / number of customers\n= <<?/?=?>?\n\nstep 6: calculate the number of customers.\nnumber of customers = total revenue / average purchase amount (given)\n= $95164.36 / $279.90\n\u2248 340.1 (round down to the nearest integer)\nlet's assume 339 customers purchased through the mixed channel.\n\nstep 7: recalculate the average purchase amount using the correct number of customers.\naverage purchase amount = $32494.71 / 339\n\u2248 $281.52\n\n#### 281.52"
+  },
+  {
+    "question": "** a company wants to know how much more revenue it would generate if customers in the in-store + smartphone device segment spent an average of $276.29 per order compared to the overall average purchase amount of $282.05 across all segments? how many customers are there in this segment? ",
+    "answer": "**\n\nstep 1: understand the question\nthe company wants to know how much more revenue it would generate if customers in the in-store + smartphone device segment spent an average of $276.29 per order compared to the overall average purchase amount of $282.05 across all segments.\n\nstep 2: find the total number of customers in this segment\ntotal customers = 311 * 1 = <<311*1=311>>311\n\nstep 3: calculate the revenue difference\nrevenue with new average = 311 * $276.29 = <<311*$276.29=85431.19>>$85,431.19\nrevenue at existing average = 311 * $282.05 = <<311*$282.05=87717.59>>$87,717.59\n\nto find the difference in revenue, subtract the revenue generated at the new average from the revenue generated at the existing average:\nrevenue difference = revenue at existing average - revenue with new average\n= $87,717.59 - $85,431.19 = <<87717.59-85431.19=1886.40>>$1,886.40\n\nstep 4: report the answer\n#### $1,886.40"
+  },
+  {
+    "question": "** the online store \"ecomstore\" has a loyalty program with 53.4% of its customers being members. if the average order value for loyalty members is $284.30, and there are 249 customers in the social media influence: low segment, how much revenue does ecomstore generate from this segment's loyalty members? ",
+    "answer": "**\nfirst, i'll find the number of loyalty members in the \"social media influence: low\" segment.\n\nnumber of total customers in \"social media influence: low\" = 249\nloyalty program membership percentage = 0.534\n\nnumber of loyalty members = 249 * 0.534 = <<249*0.534=132.56>>133 (round down to 133, since you can't have a fraction of a customer)\n\nnext, i'll calculate the total revenue from loyalty members in this segment.\n\naverage order value for loyalty members = $284.30\nnumber of loyalty members = 133\n\ntotal revenue = 133 * $284.30 = <<133*284.30=37,751.10>>$37,751.10\n\n#### $37,511.10"
+  },
+  {
+    "question": "A product category, \"Toys & Games\", accounts for 6.4% of total sales in the social media influence: low segment. If the average order value for this category is $272.50, and there are 249 customers in this segment, what is the total revenue generated from Toys & Games purchases?",
+    "answer": "First, I'll calculate the total revenue generated from all customers.\nTotal revenue = ? \u00d7 $272.50 \u00d7 0.064\n= ?\n\n**Step-by-step calculation:**\n1. Multiply the number of customers by their average order value:\n249 \u00d7 $272.50 = <<249*272.5=67845>>67845.00 (approximately)\n2. Multiply this result by the percentage of total sales accounted for by Toys & Games:\n$67845.00 \u00d7 0.064 = <<67845*0.064=43334.4>>43334.40\n\n**Final answer:**\n#### $43334.40"
+  },
+  {
+    "question": "** the \"multi-dimension segment analysis\" shows that customers who shop online using smartphones (31.7% of online customers) have an average order value of $283.29. if there are 106 customers in this segment, and the total purchase amount is $30028.46, what percentage of the total purchase amount comes from this specific group? ",
+    "answer": "**\nstep 1: calculate the total purchase amount from customers using smartphones.\ntotal purchase amount = 106 * $283.29 = <<106*283.29=30133.14>>30133.14\n\nstep 2: calculate the percentage of the total purchase amount from customers using smartphones.\npercentage = ($30,133.14 / $87,117.59) * 100 = <<3071114/8711759*100=34.41>>34.41\n\n#### 34.41"
+  },
+  {
+    "question": "The \"Social Media Influence: High\" segment has a loyalty program membership rate of 43.7%. If there are 268 customers in this segment, and the average order value for non-members is $284.30, how much more revenue does the store generate from loyalty members compared to non-members if each customer makes exactly one order?",
+    "answer": "Total = 268 - 117 = <<268-117=151>>151\n#### 151"
+  },
+  {
+    "question": "** the \"social media influence: medium\" segment has an average purchase amount of $280.12, with 34.7% of customers making their purchases online. if there are 236 customers in this segment, what is the total revenue generated from online purchases? ",
+    "answer": "**\nfirst, i'll calculate the number of online customers.\nonline customers = 236 * 0.347 = <<236*0.347=81.51>>81\n\nnext, i'll find the total revenue from online purchases.\ntotal revenue = 81 * $280.12 = <<81*$280.12=22,649.92>>$22,649.92\n\n#### $22,649.92"
+  }
+]

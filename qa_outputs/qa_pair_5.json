@@ -1,0 +1,6 @@
+{
+  "original_question": "",
+  "original_answer": "I'm ready to solve the problem!\n\nPlease provide the word problem you'd like me to solve, and I'll follow the GSM8K-style solution guidelines:\n\n1. Start each step with concise explanations of my thinking\n2. Show all calculations clearly with \"X operation Y = Z\" format\n3. Use precise arithmetic with no rounding until the final answer\n4. Provide a clear and concise final answer (with units if appropriate)\n\nLet's get started!",
+  "formatted_question": "** an online retailer's best-selling product, a wireless charging pad, has been selling at an average rate of 120 units per week. if this represents 80% of total sales for the product during a specific quarter, how many wireless charging pads were sold in total during that quarter? ",
+  "formatted_answer": "**\n\nfirst, i'll calculate the total number of wireless charging pads sold.\ntotal wireless charging pads = 120 / 0.8 = <<120/0.8=150>>150 units per week\n\nnext, i'll find out how many weeks are in a quarter (assuming a standard 13-week quarter).\nweeks in a quarter = 13\n\nnow, i'll multiply the total weekly sales by the number of weeks to get the total quarterly sales.\ntotal wireless charging pads sold in a quarter = 150 x 13 = <<150*13=1950>>1950 units\n\n#### 1950"
+}
