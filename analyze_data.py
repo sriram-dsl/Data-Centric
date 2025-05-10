@@ -1,7 +1,8 @@
 from src.data_preprocessing import load_and_preprocess_data
 from src.document_creation import create_table_rag_documents_multidim
 from src.verification import verify_documents, check_query_capabilities, save_sample_documents
-from config.settings import CSV_PATH
+from src.vector_store import create_vector_store  # Add this import
+from config.settings import CSV_PATH, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH  # Update import
 
 def main():
     # Load and preprocess data
@@ -9,6 +10,9 @@ def main():
 
     # Create documents
     documents = create_table_rag_documents_multidim(processed_df)
+
+    # Create vector store
+    create_vector_store(documents, EMBEDDING_MODEL, VECTOR_STORE_SAVE_PATH)  # Add this line
 
     # Verify documents
     verify_documents(documents)
