@@ -1,27 +1,33 @@
-# E-commerce Consumer Behavior Analysis Pipeline
+# E-commerce Data Analysis and QA Pair Generation Pipeline
+
+This guide provides instructions for setting up and running the integrated e-commerce consumer behavior analysis and QA pair generation pipeline. The pipeline processes e-commerce data, creates a FAISS vector store for Retrieval-Augmented Generation (RAG), and generates GSM8K-style question-answer (QA) pairs for fine-tuning large language models (LLMs) using Group Preference Optimization (GPO).
+
+---
 
 ## Overview
 
-This project provides a data analysis pipeline for processing e-commerce consumer behavior data stored in a CSV file. The pipeline preprocesses the data, generates structured documents for Table Retrieval-Augmented Generation (RAG), and verifies document quality. The documents are designed to be used with a LangChain FAISS vector store for advanced querying and analysis, enabling insights into customer demographics, purchase patterns, and behavior.
+The pipeline consists of two main components:
+
+1. **Data Analysis Pipeline:**
+    - Loads and preprocesses e-commerce consumer behavior data from a CSV file.
+    - Generates structured documents (row-level, single-dimension, and multi-dimension segments).
+    - Creates a FAISS vector store for RAG-based querying.
+    - Verifies document quality and query capabilities.
+
+2. **QA Pair Generation Pipeline:**
+    - Generates data-driven analytical questions based on the vector store.
+    - Answers questions with step-by-step reasoning in GSM8K format.
+    - Formats and validates QA pairs for LLM fine-tuning with GPO.
 
 ---
 
 ## Use Case
 
-The primary use case is to analyze e-commerce consumer behavior data to uncover actionable insights, such as:
+This pipeline is designed for:
 
-- **Customer Segmentation:** Understand purchasing patterns across demographics (e.g., gender, age, income level), purchase channels (e.g., online vs. in-store), and product categories.
-- **Behavioral Analysis:** Identify trends in customer loyalty, discount usage, satisfaction, and engagement with ads.
-- **Business Decision Support:** Provide data-driven insights for marketing strategies, product recommendations, and customer retention programs.
-- **Query Capabilities:** Enable natural language queries (via a vector store) to answer complex questions, e.g.,  
-  _"What percentage of unmarried customers who shop online purchase electronics?"_
-
-The pipeline generates three types of documents:
-- **Row-level Documents:** Detailed customer profiles with demographics, purchase details, and behavior.
-- **Single-dimension Segment Documents:** Statistics for segments like gender, income level, or purchase category.
-- **Multi-dimension Segment Documents:** Statistics for combinations of dimensions, e.g., gender + purchase channel.
-
-These documents can be embedded in a FAISS vector store for efficient retrieval and analysis using large language models (LLMs).
+- **Business Insights:** Analyzing customer demographics, purchase patterns, and behavior to inform marketing and product strategies.
+- **LLM Fine-Tuning:** Generating high-quality, mathematical QA pairs in GSM8K format to fine-tune LLMs for e-commerce analytics tasks.
+- **Query Capabilities:** Enabling natural language queries to answer complex questions like "What percentage of unmarried customers who shop online purchase electronics?"
 
 ---
 
@@ -29,22 +35,25 @@ These documents can be embedded in a FAISS vector store for efficient retrieval 
 
 ### Software
 
-- **Python:** Version 3.8 or higher
-- **Dependencies:** Listed in `requirements.txt`
-    - `pandas`
-    - `numpy`
-    - `langchain`
-    - `IPython`
+- **Python:** Version 3.8 or higher.
+- **Ollama:** For running the llama3 LLM and nomic-embed-text embedding model locally.
+- **Dependencies (listed in `requirements.txt`):**
+    - pandas
+    - numpy
+    - langchain
+    - IPython
+    - langchain_ollama
+    - faiss-cpu (or faiss-gpu for GPU support)
 
 ### Hardware
 
-- **Memory:** At least 8GB RAM (for processing large CSV files)
-- **Storage:** Sufficient space for the input CSV and output JSON files
-- **CPU:** Multi-core processor recommended for faster data processing
+- **Memory:** At least 8GB RAM (16GB recommended for large datasets or QA generation).
+- **Storage:** Sufficient space for the input CSV, FAISS index (~1-2GB), and QA output files.
+- **CPU/GPU:** Multi-core CPU or GPU (optional) for faster processing.
 
 ### Input Data
 
-A CSV file named `Ecommerce_Consumer_Behavior_Analysis_Data.csv` with the following columns:
+A CSV file named `Ecommerce_Consumer_Behavior_Analysis_Data.csv` with columns:
 
 `
 Customer_ID, Age, Gender, Income_Level, Marital_Status, Education_Level, Occupation, Location,
@@ -56,13 +65,40 @@ Device_Used_for_Shopping, Payment_Method
 
 ---
 
-## Installation
-
-### 1. Clone the Repository (or create the directory structure):
+## Project Structure
 
 ```
-git clone https://github.com/sriram-dsl/Data-Centric.git
-cd Data-Centric
+Data-Centric/
+├── config/
+│ └── settings.py # Configuration for dimensions, paths, and QA settings
+├── src/
+│ ├── data_preprocessing.py # Data loading and preprocessing
+│ ├── document_creation.py # Document creation logic
+│ ├── verification.py # Document verification and query testing
+│ ├── utils.py # Helper functions
+│ ├── vector_store.py # Vector store creation and saving
+│ ├── qa/
+│ │ ├── question_generator.py # Question generation logic
+│ │ ├── answer_generator.py # Answer generation logic
+│ │ ├── qa_formatter.py # QA pair formatting and validation
+│ │ └── pipeline.py # QA pipeline orchestration
+├── analyze_data.py # Main script to run the full pipeline
+├── requirements.txt # Python dependencies
+├── table_rag_sample_documents.json # Output file (generated)
+├── qa_outputs/ # QA pipeline output directory (generated)
+└── README.md # Project documentation
+```
+
+
+---
+
+## Installation
+
+### 1. Clone the Repository (or set up the directory structure):
+
+```
+git clone <repository-url>
+cd synthetic_dataset_llm
 ```
 
 Alternatively, create the directory structure as shown above and save the provided files.
@@ -75,63 +111,103 @@ source venv/bin/activate # On Windows: venv\Scripts\activate
 ```
 
 
-### 3. Install Dependencies:
+### 3. Install Python Dependencies:
 
 ```
 pip install -r requirements.txt
 ```
 
 
-### 4. Prepare the Input Data:
+### 4. Install Ollama:
 
-Place the `Ecommerce_Consumer_Behavior_Analysis_Data.csv` file in the project root directory  
-**OR**  
-Update the `CSV_PATH` in `config/settings.py` to point to its location.
+- **Linux:**
+    ```
+    curl -fsSL https://ollama.com/install.sh | sh
+    ```
+- **macOS:** Download and install from [https://ollama.com/download](https://ollama.com/download).
+- **Windows:** Use WSL2 (see Microsoft's WSL2 guide) and follow Linux instructions.
+
+Verify installation:
+```
+ollama --version
+```
+
+
+### 5. Pull Ollama Models:
+
+- Start the Ollama service:
+    ```
+    ollama serve &
+    ```
+- Pull the required models:
+    ```
+    ollama pull nomic-embed-text
+    ollama pull llama3
+    ```
+- Verify models:
+    ```
+    ollama list
+    ```
+
+### 6. Prepare Input Data:
+
+Place `Ecommerce_Consumer_Behavior_Analysis_Data.csv` in the project root or update `CSV_PATH` in `config/settings.py` to point to its location.
 
 ---
 
-## Implementation
+## Running the Pipeline
 
-### Run the Pipeline
-
-Execute the main script to process the CSV, generate documents, and verify them:
+Execute the Pipeline:  
+Run the main script to process the CSV, create the vector store, verify documents, and generate QA pairs:
 
 ```
 python analyze_data.py
 ```
 
 
+---
 
-#### Expected Output
+## Expected Output
 
-- **Console Output:** Information about the dataset (rows, columns, data types), preprocessing results, document creation progress, and verification results (e.g., document distribution, query capabilities).
-- **JSON File:** A file named `table_rag_sample_documents.json` containing a sample of generated documents (customer rows, single-dimension segments, and multi-dimension segments).
-- **Documents:** A list of LangChain `Document` objects ready for embedding in a FAISS vector store (not implemented in this script).
+### Console Output
+
+- Data preprocessing details (rows, columns, data types).
+- Document creation progress (row-level, single-dimension, multi-dimension).
+- Vector store creation confirmation.
+- Document verification results (distribution, query capabilities).
+- QA pair generation progress (questions, answers, formatted pairs).
+
+### Files
+
+- `table_rag_sample_documents.json`: Sample of generated documents.
+- `ecommerce_table_rag/`: FAISS vector store directory.
+- `qa_outputs/`:
+    - `formatted_qa_pairs_final.json`: All formatted QA pairs.
+    - `gsm8k_formatted_qa_pairs.json`: QA pairs in strict GSM8K format.
+    - Individual QA pair JSON files (e.g., `qa_pair_1.json`).
+
+### Documents
+
+- LangChain Document objects embedded in the FAISS vector store.
+
+### QA Pairs
+
+- GSM8K-style QA pairs for LLM fine-tuning.
 
 ---
 
-### Extending to Vector Store (Optional)
+## Configuration
 
-To use the generated documents with a LangChain FAISS vector store:
+Adjust settings in `config/settings.py`:
 
-1. **Install additional dependencies:**
-    ```
-    pip install faiss-cpu sentence-transformers
-    ```
-    (or `faiss-gpu` for GPU support)
-
-2. **Add the following code to `analyze_data.py` after document creation:**
-
-    ```
-    from langchain.vectorstores import FAISS
-    from langchain.embeddings import HuggingFaceEmbeddings
-
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    vector_store = FAISS.from_documents(documents, embeddings)
-    vector_store.save_local("faiss_index")
-    ```
-
-This creates a FAISS index that can be queried using LangChain for advanced analytics.
+- `CSV_PATH`: Path to the input CSV.
+- `EMBEDDING_MODEL`: Ollama embedding model (`nomic-embed-text`).
+- `VECTOR_STORE_SAVE_PATH`: FAISS index path (`ecommerce_table_rag`).
+- `QA_LLM_MODEL`: LLM for QA generation (`llama3`).
+- `QA_OUTPUT_DIR`: QA output directory (`qa_outputs`).
+- `QA_NUM_QUESTIONS_PER_CATEGORY`: Questions per category (default: 5).
+- `QA_TOTAL_QUESTIONS`: Total QA pairs to generate (default: 20).
+- `QA_CATEGORIES`: List of query categories for QA generation.
 
 ---
 
@@ -139,51 +215,46 @@ This creates a FAISS index that can be queried using LangChain for advanced anal
 
 Running `python analyze_data.py` will:
 
-- Load and preprocess the CSV file, cleaning string columns, converting `Purchase_Amount` to numeric, and `Time_of_Purchase` to datetime.
-- Generate documents:
-    - Row-level documents for each customer.
-    - Single-dimension segments (e.g., by gender, income level).
-    - Multi-dimension segments (e.g., gender + purchase channel).
-- Verify document quality, checking distribution and query capabilities for questions like:
-    - "How many female customers used discounts?"
-    - "What percentage of electronics purchases were made online?"
-- Save a sample of documents to `table_rag_sample_documents.json`.
+- Preprocess the CSV, cleaning strings and converting data types.
+- Generate documents (customer profiles, segment statistics).
+- Create a FAISS vector store using nomic-embed-text embeddings.
+- Verify document quality and test query capabilities (e.g., "How many female customers used discounts?").
+- Generate 20 GSM8K-style QA pairs across 8 categories (e.g., customer demographics, discount usage).
+- Save outputs to `table_rag_sample_documents.json` and `qa_outputs/`.
 
-To query the data using a vector store, load the FAISS index and use LangChain's retrieval capabilities with an LLM.
+**To use the QA pairs for LLM fine-tuning:**
+
+- Use `qa_outputs/gsm8k_formatted_qa_pairs.json` as input for GPO fine-tuning workflows.
+- The pairs are formatted with questions (self-contained word problems) and answers (step-by-step reasoning with `<<calculation=result>>` and `#### [number]`).
 
 ---
 
 ## Troubleshooting
 
-- **File Not Found Error:** Ensure the CSV file is in the correct path or update `CSV_PATH` in `config/settings.py`.
-- **Memory Issues:** For large datasets, increase available RAM or process the CSV in chunks by modifying `data_preprocessing.py`.
-- **Dependency Errors:** Verify all dependencies are installed correctly using `pip install -r requirements.txt`.
-- **Data Format Issues:** Ensure the CSV columns match the expected schema. Missing or malformed columns may cause preprocessing errors.
+- **Ollama Errors:**
+    - Ensure Ollama is running (`ollama serve &`) and models are pulled (`ollama list`).
+    - Check for sufficient disk space and RAM for llama3 and nomic-embed-text.
+- **File Not Found:**
+    - Verify `Ecommerce_Consumer_Behavior_Analysis_Data.csv` is in the correct path.
+    - Update `CSV_PATH` in `config/settings.py` if needed.
+- **Dependency Issues:**
+    - Run `pip install -r requirements.txt` to install all dependencies.
+    - Upgrade pip if needed: `pip install --upgrade pip`.
+- **Memory Issues:**
+    - Increase RAM or process the CSV in chunks by modifying `data_preprocessing.py`.
+    - Reduce `QA_TOTAL_QUESTIONS` in `config/settings.py` for smaller datasets.
+- **QA Pair Validation Failures:**
+    - Check console logs for validation errors (e.g., missing `<<calculation>>` or `####`).
+    - Adjust `QA_NUM_QUESTIONS_PER_CATEGORY` or increase `max_attempts` in `pipeline.py` for more retries.
+- **Data Format Issues:**
+    - Ensure CSV columns match the expected schema.
+    - Fix malformed data (e.g., inconsistent date formats) before running.
 
 ---
 
-## Contributing
+## Additional Resources
 
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit changes (`git commit -m "Add your feature"`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Please ensure code follows the existing style and includes tests for new features.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
-├── requirements.txt # Python dependencies
-├── table_rag_sample_documents.json # Output file (generated)
-└── README.md # This file
-
-
-
+- [Ollama Documentation](https://ollama.com/docs): Setup and model management.
+- [LangChain Documentation](https://python.langchain.com/docs/): FAISS and Ollama integration.
+- [GSM8K Dataset](https://github.com/openai/grade-school-math): Reference for QA pair format.
+- [FAISS Documentation](https://faiss.ai/): Vector store details.
