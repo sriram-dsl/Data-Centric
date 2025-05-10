@@ -97,8 +97,8 @@ Data-Centric/
 ### 1. Clone the Repository (or set up the directory structure):
 
 ```
-git clone <repository-url>
-cd synthetic_dataset_llm
+git clone https://github.com/sriram-dsl/Data-Centric.git
+cd Data-Centric
 ```
 
 Alternatively, create the directory structure as shown above and save the provided files.
@@ -254,6 +254,7 @@ Running `python analyze_data.py` will:
     - Ensure CSV columns match the expected schema.
     - Fix malformed data (e.g., inconsistent date formats) before running.
 
+## note : any doubts in the dataset preparation step check the `Untitled.ipynb` notebook 
 ---
 
 ## Additional Resources
