@@ -2,6 +2,9 @@
 
 This guide provides instructions for setting up and running the integrated e-commerce consumer behavior analysis and QA pair generation pipeline. The pipeline processes e-commerce data, creates a FAISS vector store for Retrieval-Augmented Generation (RAG), and generates GSM8K-style question-answer (QA) pairs for fine-tuning large language models (LLMs) using Group Preference Optimization (GPO).
 
+![image](https://github.com/user-attachments/assets/bbf0c4f1-0fc2-40f0-b297-882867bfffb1)
+
+
 ---
 
 ## Overview
